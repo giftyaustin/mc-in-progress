@@ -1,0 +1,69 @@
+
+
+.Auth{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.inpBox{
+    padding-left: 10px;
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    outline: none;
+
+}
+.inpBox{
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid rgba(102, 102, 102, 0.566);
+    background-color: #ffffff27;
+    width: 100%;
+    font-size: smaller;
+    
+}
+.inpLabelH > p{
+margin-bottom: 3px;
+font-size: smaller;
+}
+.inpLabelH {
+    margin-bottom: 20px;
+}
+
+.signUpBtn{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 3px;
+    height: 40px;
+    font-size: smaller;
+}
+.signUpBtn:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+
+.haveAnAccount{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    font-size: clamp(8px, 5vw , 13px);
+    color: gray;
+}
+
+.rLoginbtn{
+    border:0;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin-left: 5px;
+    height: 20px;
+    color: rgb(0, 130, 205);
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

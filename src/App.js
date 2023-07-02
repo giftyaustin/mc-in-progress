@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./landingComp/LandingPage";
+import Appcss from "./App.module.css";
+import { lazy, Suspense } from "react";
+const Auth = lazy(() => import("./authComp/Auth.js"));
+const UserHome = lazy(()=>{import('./accountComp/UserHome.js')})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+
+        <Route
+          exact
+          path="/auth"
+          element={
+            <Suspense fallback={"loading ..."}>
+              <Auth />
+            </Suspense>
+          }
+        />
+        <Route exact path="/accounts" element={<Suspense fallback={'loading...'}><UserHome/></Suspense>}/>
+      </Routes>
     </div>
   );
 }
