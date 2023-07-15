@@ -1,3 +1,8 @@
+:root{
+    --mont : 'Montserrat', sans-serif;
+    --roboto : 'Roboto', sans-serif;
+}
+
 html{
     background-color: #e0e0e0;
     padding: 0;
@@ -9,5 +14,8 @@ html{
     padding: 0;
     box-sizing: border-box;
     background-color: #e0e0e0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--roboto);
+}
+button{
+    font-family: var(--mont);
 }

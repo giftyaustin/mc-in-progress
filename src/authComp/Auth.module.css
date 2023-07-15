@@ -34,6 +34,9 @@ font-size: smaller;
 }
 
 .signUpBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     border: 1px solid black;
     border-radius: 3px;
@@ -44,6 +47,9 @@ font-size: smaller;
     background-color: black;
     color: white;
     transition: 0.5s;
+}
+.signUpBtn:hover > .login-loading{
+    border-bottom: 3px solid black;
 }
 
 

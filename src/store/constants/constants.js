@@ -1,0 +1,28 @@
+// login actions
+
+export const LOGIN_REQUEST_SENT = 'LOGIN_REQUEST_SENT'
+export const LOGIN_REQUEST_SUCCESS = 'LOGIN_REQUEST_SUCCESS'
+export const LOGIN_REQUEST_FAILED = 'LOGIN_REQUEST_FAILED'
+
+
+// All products 
+export const PRODUCTS_LOAIDNG = 'PRODUCTS_LOAIDNG'
+export const PRODUCTS_FETCHED = 'PRODUCTS_FETCHED'
+export const PRODUCTS_LOADING_FAILED = 'PRODUCTS_LOADING_FAILED'
+
+
+
+// user details actions
+export const USER_DETAILS_LOADING = 'USER_DETAILS_LOADING'
+export const USER_DETAILS_SUCCESS = 'USER_DETAILS_SUCCESS'
+export const USER_DETAILS_FAILED = 'USER_DETAILS_FAILED'
+export const USER_DETAILS_EMPTY = 'USER_DETAILS_EMPTY'
+
+// pop up actions
+export const POPUP_DETAILS_NONE = "POPUP_DETAILS_NONE"
+export const POPUP_DETAILS_TRUE = "POPUP_DETAILS_TRUE"
+
+
+// filter actions
+export const SEARCH = 'SEARCH'
+export const PAGE = "PAGE"
