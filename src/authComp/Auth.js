@@ -2,7 +2,7 @@ import React from "react";
 import auth from "./Auth.module.css";
 import { useRef, useState } from "react";
 import "./auth.css";
-import { registerUser } from "../businessFunc/registerUser";
+import { registerUser, submitOtp } from "../businessFunc/registerUser";
 import { handleInputChange } from "../utils/handleInputChange";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,11 +15,13 @@ const Auth = () => {
   const [showOtp, setShowOtp] = useState(false);
   const logRef = useRef();
   const regRef = useRef();
+  const otpRef = useRef();
   const [email, setEmail] = useState();
   const [lemail, setLemail] = useState();
   const [lpassword, setLpassword] = useState();
   const [password, setPassword] = useState();
   const [fullName, setFullName] = useState();
+  const [showOTPBox, setShowOTPBox] = useState(false);
   const loginLoading = useSelector((state) => state.login.loading);
 
   return (
@@ -47,7 +49,7 @@ const Auth = () => {
             />
           </div>
           <button
-            className='signUpBtn'
+            className="signUpBtn"
             onClick={(e) => {
               loginUser(dispatch, lemail, lpassword, history);
             }}
@@ -100,21 +102,30 @@ const Auth = () => {
               }}
             />
           </div>
-          {showOtp ? (
-            <div>
-              <input type="text" placeholder="Enter otp" />
-            </div>
-          ) : (
-            ""
-          )}
+
           <button
-            className='signUpBtn'
+            className="signUpBtn"
             onClick={() => {
-              registerUser(email, fullName, password, history);
+              registerUser(
+                email,
+                fullName,
+                password,
+                history,
+                setShowOTPBox,
+                dispatch
+              );
             }}
           >
             Sign up
           </button>
+
+          {showOTPBox && (
+            <div className={auth.otpboxH}>
+              <input type="text" maxLength={4} placeholder="OTP" ref={otpRef} />{" "}
+              <button onClick={()=>{submitOtp(otpRef.current.value, history, dispatch)}}>Submit</button>
+            </div>
+          )}
+
           <div className={auth.haveAnAccount}>
             Already have an account?{" "}
             <button

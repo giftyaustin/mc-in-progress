@@ -6,6 +6,15 @@ export const handleMenuItemClick = (c, history)=>{
         case 'Homepage':
             history('/')
             break;
+        case 'Your cart':
+            history('/accounts/cart')
+            break;
+        case 'Products':
+            history('/accounts/products')
+            break;
+        case 'Your account':
+            history('/accounts/me')
+            break;
     
         default:
             break;

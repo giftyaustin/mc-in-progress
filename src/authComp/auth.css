@@ -1,8 +1,7 @@
 .lblockh {
 
     border-radius: 50px;
-   
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    box-shadow: var(--neuShadowSmall);
     aspect-ratio: 1/1;
     width: clamp(200px, 90vw, 400px);
     display: flex;
@@ -16,7 +15,7 @@
 
     border-radius: 50px;
    
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    box-shadow: var(--neuShadowSmall);
     aspect-ratio: 1/1;
     width: clamp(200px, 90vw, 400px);
     display: flex;
@@ -81,15 +80,18 @@
 @keyframes test2 {
     0%{
         transform: rotateY(90deg);
+        
     }
     20%{
         transform: rotateY(0deg);
-        
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     }
     40%{
         transform: rotateY(0deg);
+       
     }
     100%{
+        box-shadow: var(--neuShadowSmall);
         transform: rotateY(0deg);
 
     }

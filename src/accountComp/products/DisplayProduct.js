@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './displayproduct.css'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { sendGETRequest } from "../../utils/sendRequest";
+import { addItemToCart } from "../../businessFunc/cart/cartControl";
 
 const DisplayProduct = () => {
   const { id } = useParams();
  const [product, setProduct] = useState()
+ const dispatch = useDispatch()
 
 const fetchProduct = async()=>{
   const response =  await sendGETRequest(`/products/${id}`)
@@ -33,7 +35,7 @@ const fetchProduct = async()=>{
         <div className="D-p-price mb-3 w-100">Price: <span>{product.price} /-</span></div>
         <div className="D-p-rating mb-3 w-100">Rating: <span>{product.rating}</span></div>
         <div className="D-p-rating mb-3 w-100">Total sales: <span>{product.stock}</span></div>
-        <button className="D-p-addtocart">Add to cart</button>
+        <button className="D-p-addtocart" onClick={()=>{addItemToCart(id, dispatch)}}>Add to cart</button>
         </>
       )}
     </div>

@@ -32,7 +32,7 @@ const NavBar = () => {
             }}
           >
             <input type="text" placeholder="Search..." className="search-inp" />
-            <button className="search-btn mx-3" type="submit">
+            <button className="search-btn" type="submit">
               search
             </button>
           </form>

@@ -7,6 +7,7 @@ import { loginReducer } from './reducers/loginReducer';
 import { productsReducer } from './reducers/productsReducer';
 import { isGuestReducer } from './reducers/isGuestReducer';
 import { filterReducer } from './reducers/filterReducers';
+import { cartReducer } from './reducers/cartReducer';
 
 const reducer = combineReducers({
     login:loginReducer,
@@ -14,7 +15,8 @@ const reducer = combineReducers({
     popup: popupReducer,
     products: productsReducer,
     isGuest: isGuestReducer,
-    filters: filterReducer
+    filters: filterReducer,
+    cart:cartReducer,
 
 })
 const initialState = {};

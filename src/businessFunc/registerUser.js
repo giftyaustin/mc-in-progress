@@ -1,11 +1,13 @@
 
+import { sendPostRequest } from '../utils/sendRequest';
 import {showPopup} from '../utils/showPopup'
 
 
 
 //  register a user
-export const registerUser = async (email, fullName, password, history) => {
+export const registerUser = async (email, fullName, password, history, setState,dispatch) => {
   const data = { email: email, name: fullName, password: password };
+  sessionStorage.setItem('user', JSON.stringify(data))
   const response = await fetch(
     `/accounts/register`,
     {
@@ -15,14 +17,35 @@ export const registerUser = async (email, fullName, password, history) => {
     }
   );
   const res = await response.json()
-  if(res.message ==='token sent sucessfully'){
-    history('/auth/accounts')
-  }
-  else{
-    console.log(res)
+  if(res.success){
+    setState(true)
+    setTimeout(()=>{setState(false)}, 60000)
+  }else{
+    showPopup(dispatch, {emotion:'', message: res.message})
   }
   
 };
+
+
+
+export const submitOtp = async(otp, history, dispatch)=>{
+  try {
+    if(otp){
+      const data = JSON.parse(sessionStorage.getItem('user'))
+      const response = await sendPostRequest(`/accounts/register/${otp}`, data)
+      if(response.success){
+        history('/accounts/products')
+        showPopup(dispatch, {emotion:'Registration successful', message:'welcome to Mihles cart'})
+      }
+      else{
+        showPopup(dispatch, {emotion:'', message:response.message})
+      }
+    }
+   
+  } catch (error) {
+    showPopup(dispatch, {emotion:'', message:error.message})
+  }
+}
 
 //  login user
 

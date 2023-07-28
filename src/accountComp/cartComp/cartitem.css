@@ -1,0 +1,67 @@
+.CartItem{
+    box-shadow: 2px 2px 6px #bebebe, -2px -2px 6px #bebebe;
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    padding: 10px 10px 20px 10px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.ci-img-h{
+    width: clamp(80px, 30%, 180px);
+}
+.ci-img-h{
+    display: flex;
+    flex-direction: column;
+}
+.ci-img-h >img{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+.ci-name-h{
+    font-size: clamp(11px, 3vw, 15px);
+}
+
+.ci-quantity-h{
+    display: flex;
+    justify-content: space-evenly;
+    width: clamp(25px, 20%, 50px);
+  
+    
+}
+.ci-quantity-h >button{
+    width: 20px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+.ci-quantity-h >span{
+ 
+    margin: 0 5px;
+
+}
+
+.ci-price-h{
+    width: clamp(25px, 20%, 50px);
+    font-size: clamp(11px, 3vw, 15px);
+}
+
+.ci-remove-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 6px #bebebe, -2px -2px 6px #bebebe;
+    border: none;
+    width: clamp(50px, 10vw, 100px);
+    font-size: clamp(3px, 2vw, 13px);
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+}

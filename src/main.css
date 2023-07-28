@@ -1,10 +1,18 @@
 :root{
     --mont : 'Montserrat', sans-serif;
     --roboto : 'Roboto', sans-serif;
+    --white: #f1f6f9;
+    --dark: #212a3e;
+    --black: rgb(20,20,20);
+    --liteDark: #394867;
+    --grey: #9ba4b5;
+    --neuShadow: 20px 20px 60px #bebebe, -20px -20px 60px #bebebe;
+    --neuShadowSmall: 2px 2px 10px #bebebe, -2px -2px 10px #bebebe;
+    --neuShadowXSmall: 2px 2px 5px #bebebe, -2px -2px 5px #bebebe;
 }
 
 html{
-    background-color: #e0e0e0;
+    background-color: var(--white);
     padding: 0;
     margin: 0;
   
@@ -13,7 +21,7 @@ html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #e0e0e0;
+    background-color: var(--white);
     font-family: var(--roboto);
 }
 button{

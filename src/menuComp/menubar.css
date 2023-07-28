@@ -28,6 +28,10 @@
     transition: 0.2s;
     box-shadow: 2px 2px 6px #333333, -2px -2px 6px #333333;
 }
+.menu-active{
+  /* box-shadow: 2px 2px 6px #333333, -2px -2px 6px #333333; */
+  border: 1px solid #bebebe;
+}
 
 .sign-out-btn{
     position: absolute;

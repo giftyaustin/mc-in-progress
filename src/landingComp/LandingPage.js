@@ -15,6 +15,7 @@ const LandingPage = () => {
   }
   return (
     <div className={land.LandingPage}>
+     
       <button onClick={()=>{showPopup(dispatch, {emotion:'Hey !!', message:'Welcome to Mihles.cart'} )}}>click</button>
       <button className={land.guestBtn} onClick={setASsGuest}>Explore as guest</button>
       <button className={land.guestBtn} onClick={()=>{dispatch({type:'isAuthorized'});history('/auth')}}>Login</button>

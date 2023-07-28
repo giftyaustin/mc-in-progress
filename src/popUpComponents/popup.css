@@ -1,7 +1,7 @@
 .PopUp{
     position: fixed;
     overflow: hidden;
-    top: -100vh;
+    top: 30px;
     animation: popup-drop;
     animation-duration: 8s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -9,32 +9,34 @@
    left: 50%;
     transform: translate(-50%, 0);
     border-radius: 20px;
-    height: 20vh;
+
     width: clamp(130px , 50vw, 350px);
     z-index: 200;
     box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.53);
-
+    opacity: 0;
 }
 
 
 .popup-emotion{
     width: 100%;
-    height: 30%;
-    background-color: white;
+    background-color: #f1f6f9;
     border-radius: 20px 20px 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 .popup-message{
     position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-    background-color: rgb(220, 93, 93);
-    height: 70%;
+    background-color: #212a3e;
+    color:white;
     width: 100%;
-    border-radius: 0 0 20px 20px;
+    padding: 20px 10px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
 
@@ -47,14 +49,14 @@
     3%{
      
         top: 40px;
-        opacity: 0.5;
+        opacity: 1;
     }
     4%{
-        top:25px;
+        top:30px;
         opacity: 1;
     }
     5%{
-        top:32px
+        top:30px
     }
     6%{
         top:30px
@@ -70,10 +72,13 @@
        
         
         top: 40px;
+        opacity: 1;
     }
-   
+   99%{
+    opacity: 0.2;
+   }
     100%{
-        
-        top: -100vh;
+        opacity: 0;
+        top: -200px;
     }
 }

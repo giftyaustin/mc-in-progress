@@ -1,0 +1,47 @@
+.YourAccount{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.img-name-h{
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    width: clamp(100%, 20% ,150px);
+}
+
+.avatar-h{
+    width: clamp(50px, 20vw, 150px);
+    aspect-ratio: 1/1;
+    margin-right: 20px;
+}
+.no-avatar{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name{
+    font-size: clamp(20px, 100%, 25px);
+    font-weight: 700;
+}
+
+.user-email{
+    margin-top: 40px;
+    padding-left: 40px;
+    font-size: clamp(15px, 20%, 20px);
+}
+
+.update-password-btn{
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: var(--mont);
+    border-radius: 20px;
+}
+.update-pass-btn-h{
+    padding-left: 40px;
+    margin-top: 40px;
+}

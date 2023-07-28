@@ -26,3 +26,10 @@ export const POPUP_DETAILS_TRUE = "POPUP_DETAILS_TRUE"
 // filter actions
 export const SEARCH = 'SEARCH'
 export const PAGE = "PAGE"
+
+
+// cart actions 
+export const CART_LOADING = 'CART_LOADING'
+export const CART_SUCCESS = 'CART_SUCCESS'
+export const CART_FAILED = 'CART_FAILED'
+ export const CART_QUANTITY_CHANGED = 'CART_QUANTITY_CHANGED'

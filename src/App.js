@@ -3,6 +3,7 @@ import LandingPage from "./landingComp/LandingPage";
 import { lazy, Suspense, useEffect } from "react";
 import { useSelector } from "react-redux";
 import PopUp from "./popUpComponents/PopUp";
+import ThreeVerticalLines from "./loadingComp/ThreeVerticalLines";
 const Auth = lazy(() => import("./authComp/Auth.js"));
 const UserHome = lazy(() => import('./accountComp/UserHome.js'));
 
@@ -11,9 +12,9 @@ function App() {
 
 
 //  reloads page when clicked back function in browser
-  window.onpopstate = function () {
-    window.location.reload()
-};
+// window.onpopstate = function () {
+    
+// };
 
 
 
@@ -21,7 +22,7 @@ function App() {
   
   return (
     <div className="App">
-   {showPopup && <PopUp/>}
+   
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
 
@@ -29,7 +30,7 @@ function App() {
           exact
           path="/auth"
           element={
-            <Suspense fallback={"loading ..."}>
+            <Suspense fallback={<ThreeVerticalLines/>}>
               <Auth />
             </Suspense>
           }
@@ -38,7 +39,7 @@ function App() {
           exact
           path="/accounts/*"
           element={
-            <Suspense fallback={"loading..."}>
+            <Suspense fallback={<ThreeVerticalLines/>}>
               <UserHome />
             </Suspense>
           }
@@ -47,12 +48,13 @@ function App() {
           exact
           path="/g-account/*"
           element={
-            <Suspense fallback={"loading..."}>
+            <Suspense fallback={<ThreeVerticalLines/>}>
               <UserHome />
             </Suspense>
           }
         />
       </Routes>
+      {showPopup && <PopUp/>}
     </div>
   );
 }

@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import "./products.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../businessFunc/fetchProducts";
 import Pagination from "../../paginationComp/Pagination";
+import ThreeVerticalLines from "../../loadingComp/ThreeVerticalLines";
+const Filters = lazy(()=>import('../../filtersComp/Filters'))
 
 
 const Products = () => {
+  window.onpopstate = function () {
+    fetchProducts(dispatch)
+  };
   const { products, resultsPerPage, totalProducts, currPage, loading } = useSelector(
     (state) => state.products
   );
@@ -26,7 +31,10 @@ const Products = () => {
   return (
     <>
       <div className="Products">
-        {loading ? 'loading products....' : 
+      <Suspense fallback={''}>
+              <Filters />
+            </Suspense>
+        {loading ? <ThreeVerticalLines/> : 
         
           products.map((c, i) => {
             return (
@@ -57,6 +65,9 @@ const Products = () => {
                   </p>
                   <p className="p-rating">
                     Rating: <span>{c.rating}</span>
+                  </p>
+                  <p className="p-rating">
+                    Category: <span>{c.category}</span>
                   </p>
                 </div>
               </div>
